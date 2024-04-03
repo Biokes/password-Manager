@@ -1,4 +1,4 @@
 package africa.semoicolon;
 
-public interface passwordmanagerRepository{
+public interface passwordmanagerRepository extends MongoRepository<LoginDetails, String >{
 }
