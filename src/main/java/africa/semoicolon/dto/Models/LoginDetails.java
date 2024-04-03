@@ -1,4 +1,4 @@
-package africa.semoicolon.dto;
+package africa.semoicolon.dto.Models;
 
 import lombok.Data;
 
