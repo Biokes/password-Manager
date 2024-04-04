@@ -1,9 +1,6 @@
 package africa.semicolon.servicesTest;
 
-import africa.semoicolon.dtos.requests.LoginDetailsRequest;
-import africa.semoicolon.dtos.requests.PasswordDetailsRequest;
-import africa.semoicolon.dtos.requests.RegisterRequest;
-import africa.semoicolon.dtos.requests.SavePasswordRequest;
+import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidFieldException;
 import africa.semoicolon.exceptions.UsernameExistsException;
 import africa.semoicolon.services.PasswordManagerServices;
@@ -63,7 +60,7 @@ public class UserServiceTest{
     void savePassword_testPasswordIsSaved(){
         RegisterRequest request = new RegisterRequest();
         request.setFirstname("ade");
-        request.setLastname("adey");
+        request.setLastname("ade");
         request.setUsername("username1");
         request.setMasterPassword("password101");
         passwordManagerServices.register(request);
@@ -79,7 +76,29 @@ public class UserServiceTest{
         assertEquals(1, passwordManagerServices.countUserLoginDetails(loginDetails));
     }
     @Test
-    void viewWebsiteDetails_testWebsiteDetailsIsGotten(){}
+    void viewWebsiteDetails_testWebsiteDetailsIsGotten(){
+        RegisterRequest request = new RegisterRequest();
+        request.setFirstname("ade");
+        request.setLastname("adey");
+        request.setUsername("username1");
+        request.setMasterPassword("password101");
+        passwordManagerServices.register(request);
+        SavePasswordRequest savePasswordRequest = new SavePasswordRequest();
+        savePasswordRequest.setUserName("username1");
+        savePasswordRequest.setWebsiteName("myWebsite");
+        savePasswordRequest.setWebsiteUsername("websiteUserName");
+        savePasswordRequest.setWebsitePassword("password");
+        passwordManagerServices.saveLoginDetails(savePasswordRequest);
+        LoginDetailsRequest loginDetails = new LoginDetailsRequest();
+        loginDetails.setUsername("username1");
+        loginDetails.setPassword("password101");
+        assertEquals(1, passwordManagerServices.countUserLoginDetails(loginDetails));
+        ViewLoginDetailsRequest viewLoginDetails = new ViewLoginDetailsRequest();
+        viewLoginDetails.setWebsiteName("myWebsite");
+        viewLoginDetails.setUsername("username1");
+        viewLoginDetails.setMasterPassword("password101");
+        passwordManagerServices.saveDetails(viewLoginDetails);
+    }
     @Test
     void updateWebsiteDetails_testWebsiteDetailsIsUpdated(){}
     @Test
