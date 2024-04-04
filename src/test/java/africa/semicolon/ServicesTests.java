@@ -1,2 +1,4 @@
-package africa.semicolon;public class servicesTests {
+package africa.semicolon;
+
+public class ServicesTests{
 }
