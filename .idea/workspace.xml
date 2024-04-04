@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="updating password manager repo and service">
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+    <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="create and update controller">
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/PasswordRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/UserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/LoginDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/dtos/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/dtos/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +32,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2ebFFLYgoJm9sEzPSbyqmQkBV4V" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -47,25 +51,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/DELL/IdeaProjects/passwordManager/src/main/java/africa/semoicolon/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/DELL/IdeaProjects/passwordManager/src/main/java/africa/semoicolon/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.UserServicesTest">
     <configuration name="UserServicesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security" />
@@ -78,19 +86,6 @@
       <option name="PACKAGE_NAME" value="security.data.services" />
       <option name="MAIN_CLASS_NAME" value="security.data.services.UserServicesTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="security" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="security" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,7 +118,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712165270393</updated>
-      <workItem from="1712165272186" duration="8076000" />
+      <workItem from="1712165272186" duration="9206000" />
+      <workItem from="1712212293445" duration="1907000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />
@@ -144,6 +140,7 @@
     <MESSAGE value="refactoring repo" />
     <MESSAGE value="create Login details dto" />
     <MESSAGE value="updating password manager repo and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating password manager repo and service" />
+    <MESSAGE value="create and update controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="create and update controller" />
   </component>
 </project>

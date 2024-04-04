@@ -7,6 +7,7 @@ import africa.semoicolon.utils.Mapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 @Service
 @AllArgsConstructor
 public class SecurityUserService implements UserService{
@@ -14,11 +15,8 @@ public class SecurityUserService implements UserService{
         User user = Mapper.mapRegister(request);
         repository.save(user);
     }
-
-    @Override
     public long countAllUsers(){
         return repository.count();
     }
-
     private UserRepository repository;
 }
