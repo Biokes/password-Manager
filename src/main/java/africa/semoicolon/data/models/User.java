@@ -1,4 +1,4 @@
-package africa.semoicolon.dtos;
+package africa.semoicolon.data.models;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

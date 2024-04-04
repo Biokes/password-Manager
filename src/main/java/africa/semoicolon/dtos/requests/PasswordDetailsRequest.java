@@ -1,2 +1,9 @@
-package africa.semoicolon.dtos.requests;public class PasswordDetailsRequest {
+package africa.semoicolon.dtos.requests;
+
+import lombok.Data;
+
+@Data
+public class PasswordDetailsRequest{
+    private String username;
+    private String password;
 }
