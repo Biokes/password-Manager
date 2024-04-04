@@ -9,12 +9,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class PasswordManagerUserService implements UserService{
+public class SecurityUserService implements UserService{
     public void register(RegisterRequest request){
         User user = Mapper.mapRegister(request);
-        reposoitory.save(user);
+        repository.save(user);
     }
 
-    private UserRepository reposoitory;
+    @Override
+    public long countAllUsers(){
+        return repository.count();
+    }
 
+    private UserRepository repository;
 }

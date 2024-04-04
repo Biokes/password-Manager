@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="updating password manager repo and service">
-      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/PasswordRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/RepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/data/UserServicesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/data/UserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +61,42 @@
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/DELL/IdeaProjects/passwordManager/src/main/java/africa/semoicolon/Main.java",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.UserServicesTest">
+    <configuration name="UserServicesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="security.data.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="security.data.services" />
+      <option name="MAIN_CLASS_NAME" value="security.data.services.UserServicesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="security" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="security" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="passwordManager" />
+      <module name="security" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semoicolon.Main" />
       <extension name="coverage">
         <pattern>
@@ -79,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServicesTest" />
         <item itemvalue="Spring Boot.Main" />
       </list>
     </recent_temporary>
@@ -91,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712165270393</updated>
-      <workItem from="1712165272186" duration="4069000" />
+      <workItem from="1712165272186" duration="8076000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />
