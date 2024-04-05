@@ -72,7 +72,7 @@
       <recent name="C:\Users\DELL\IdeaProjects\passwordManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest (1)">
+  <component name="RunManager" selected="JUnit.UserServiceTest.deleteUser_testUserIsDeleted">
     <configuration name="UserServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PasswordSaver" />
       <extension name="coverage">
@@ -99,6 +99,22 @@
       <option name="PACKAGE_NAME" value="africa.semicolon.servicesTest" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.servicesTest.UserServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.deleteUser_testUserIsDeleted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PasswordSaver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.servicesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="africa.semicolon.servicesTest" />
+      <option name="MAIN_CLASS_NAME" value="africa.semicolon.servicesTest.UserServiceTest" />
+      <option name="METHOD_NAME" value="deleteUser_testUserIsDeleted" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,26 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="security" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semoicolon.Main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="africa.semoicolon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.deleteUser_testUserIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest (1)" />
         <item itemvalue="JUnit.UserServiceTest.deleteWebsiteDetails_testWebsiteDetailsIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetails_testWebsiteDetailsIsUpdated" />
-        <item itemvalue="Spring Boot.Main" />
       </list>
     </recent_temporary>
   </component>
