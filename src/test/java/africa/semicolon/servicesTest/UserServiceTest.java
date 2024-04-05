@@ -3,10 +3,7 @@ package africa.semicolon.servicesTest;
 import africa.semoicolon.Main;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
-import africa.semoicolon.exceptions.InvalidDetailsException;
-import africa.semoicolon.exceptions.InvalidFieldException;
-import africa.semoicolon.exceptions.UserDoesNotExistException;
-import africa.semoicolon.exceptions.UsernameExistsException;
+import africa.semoicolon.exceptions.*;
 import africa.semoicolon.services.PasswordManagerServices;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -184,8 +181,33 @@ public class UserServiceTest{
         passwordManagerServices.deleteUser(loginRequest);
         assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
     }
-//    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
-//    }
+    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
+        RegisterRequest request=new RegisterRequest( );
+        request.setFirstname("ade");
+        request.setLastname("adey");
+        request.setUsername("username1");
+        request.setMasterPassword("password101");
+        passwordManagerServices.register(request);
+        SavePasswordRequest savePasswordRequest=new SavePasswordRequest( );
+        savePasswordRequest.setUserName("username1");
+        savePasswordRequest.setWebsiteName("myWebsite");
+        savePasswordRequest.setWebsiteUsername("websiteUserName");
+        savePasswordRequest.setWebsitePassword("password");
+        passwordManagerServices.saveLoginDetails(savePasswordRequest);
+        UpdateDetailsRequest update=new UpdateDetailsRequest( );
+        update.setUsername("username");
+        update.setPassword("password101");
+        update.setWebsiteName("nothing");
+        update.setWebsitePassword("password101-");
+        assertThrows(InvalidLoginDetailsException.class,()->passwordManagerServices.updateLoginDetails(update));
+        update.setWebsitePassword("password");
+        assertThrows(InvalidLoginDetailsException.class,()->passwordManagerServices.updateLoginDetails(update));
+        update.setUsername("username1");
+        update.setPassword("password101");
+        update.setWebsiteName("myWebsite");
+        update.setWebsitePassword("password101-");
+        passwordManagerServices.updateLoginDetails(update);
+    }
 //
 //    @Test void addToWrongWebsiteDetails_testExceptionIsThrown(){
 //    }

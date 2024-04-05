@@ -71,7 +71,7 @@
       <recent name="C:\Users\DELL\IdeaProjects\passwordManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest (1)">
+  <component name="RunManager" selected="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown">
     <configuration name="UserServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PasswordSaver" />
       <extension name="coverage">
@@ -134,8 +134,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.updateWebsiteDetails_testWebsiteDetailsIsUpdated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="security" />
+    <configuration name="UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PasswordSaver" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="africa.semicolon.servicesTest.*" />
@@ -144,7 +144,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="africa.semicolon.servicesTest" />
       <option name="MAIN_CLASS_NAME" value="africa.semicolon.servicesTest.UserServiceTest" />
-      <option name="METHOD_NAME" value="updateWebsiteDetails_testWebsiteDetailsIsUpdated" />
+      <option name="METHOD_NAME" value="updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" />
         <item itemvalue="JUnit.UserServiceTest (1)" />
         <item itemvalue="JUnit.UserServiceTest.deleteUser_testUserIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest.deleteWebsiteDetails_testWebsiteDetailsIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetails_testWebsiteDetailsIsUpdated" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +172,7 @@
       <workItem from="1712212293445" duration="3234000" />
       <workItem from="1712304521116" duration="517000" />
       <workItem from="1712314050689" duration="2806000" />
-      <workItem from="1712321840393" duration="4271000" />
+      <workItem from="1712321840393" duration="4945000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />

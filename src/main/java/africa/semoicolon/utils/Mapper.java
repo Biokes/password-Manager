@@ -8,6 +8,8 @@ import africa.semoicolon.dtos.requests.SavePasswordRequest;
 import africa.semoicolon.dtos.requests.ViewLoginDetailsRequest;
 import africa.semoicolon.exceptions.InvalidFieldException;
 
+import static africa.semoicolon.utils.Validator.validateRegisterRequest;
+
 public class Mapper{
     public static User mapRegisterRequest(RegisterRequest request){
         User user = new User();
@@ -18,17 +20,6 @@ public class Mapper{
         user.setPassword(request.getMasterPassword());
         return user;
     }
-    public static void validate(String userName){
-        if(userName.isEmpty())
-            throw new InvalidFieldException();
-    }
-    public static void validateRegisterRequest(RegisterRequest request){
-        validate(request.getFirstname());
-        validate(request.getLastname());
-        validate(request.getUsername());
-        validate(request.getMasterPassword());
-    }
-
     public static void mapViewLoginDetails(ViewLoginDetailsRequest viewLoginDetails){
         WebsiteDetails details = new WebsiteDetails();
     }
