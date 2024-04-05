@@ -9,14 +9,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/password-saver")
 public class PasswordSaverController{
-    @Qualifier("passwordManagerServices")
     private PasswordManagerServices userService;
     @PostMapping("/Register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request){
@@ -30,7 +28,7 @@ public class PasswordSaverController{
     }
     @DeleteMapping("/Delete-Account")
     public ResponseEntity<?> deleteAccount(){
-
+        return new ResponseEntity<>("",OK);
     }
 
 }

@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="create and update controller">
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/servicesTest/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/servicesTest/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +173,7 @@
       <workItem from="1712212293445" duration="3234000" />
       <workItem from="1712304521116" duration="517000" />
       <workItem from="1712314050689" duration="2806000" />
-      <workItem from="1712321840393" duration="9238000" />
+      <workItem from="1712321840393" duration="9602000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />
