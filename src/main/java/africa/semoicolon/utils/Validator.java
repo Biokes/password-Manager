@@ -33,5 +33,16 @@ public class Validator{
         validate(loginDetailsRequest.getUsername( ));
         validate(loginDetailsRequest.getPassword( ));
     }
+    public static void validateViewLoginDetails(ViewLoginDetailsRequest request){
+        validate(request.getUsername( ));
+        validate(request.getWebsiteName( ));
+        validate(request.getMasterPassword( ));
+    }
+    public static void validateSavePasswordRequest(SavePasswordRequest request){
+        validate(request.getWebsiteName());
+        validate(request.getUserName());
+        validate(request.getWebsiteUsername());
+        validate(request.getWebsitePassword());
+    }
 }
 
