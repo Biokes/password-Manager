@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class LoginDetailsResponse{
     private String WebsiteName;
-    private String websiterUsername;
+    private String websiteUsername;
     private String websitePasssword;
 }

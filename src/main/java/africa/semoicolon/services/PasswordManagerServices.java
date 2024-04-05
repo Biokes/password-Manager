@@ -1,5 +1,6 @@
 package africa.semoicolon.services;
 
+import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,6 @@ public interface PasswordManagerServices{
     long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest);
     long countUserLoginDetails(LoginDetailsRequest loginDetails);
     void saveLoginDetails(SavePasswordRequest savePasswordRequest);
-    void fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
+    LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
     void wipeAll();
 }

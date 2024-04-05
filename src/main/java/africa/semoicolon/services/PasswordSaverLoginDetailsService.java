@@ -9,22 +9,28 @@ import africa.semoicolon.utils.Mapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class PasswordSaverLoginDetailsService implements LoginDetailsService{
-    @Override
     public void save(SavePasswordRequest savePasswordRequest){
         WebsiteDetails details = Mapper.mapSavePasswordRequest(savePasswordRequest);
         loginDetailsBank.save(details);
     }
-
-    @Override
     public LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails){
-        return null;
+        List<WebsiteDetails> listDetails = loginDetailsBank.findByUsername(viewLoginDetails.getUsername());
+        for(WebsiteDetails details : listDetails){
+            if(details.getWebsiteName().equalsIgnoreCase(viewLoginDetails.getWebsiteName()))
+                return Mapper.mapLoginDetailsResponseWith(details);
+
+        }
     }
     public void deleteAll(){
         loginDetailsBank.deleteAll();
     }
-
+    public List<WebsiteDetails> findByUsername(String username){
+        return loginDetailsBank.findByUsername(username);
+    }
     private LoginDetailsBank loginDetailsBank;
 }

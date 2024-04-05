@@ -1,6 +1,7 @@
 package africa.semicolon.servicesTest;
 
 import africa.semoicolon.Main;
+import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidFieldException;
 import africa.semoicolon.exceptions.UsernameExistsException;
@@ -71,6 +72,7 @@ public class UserServiceTest{
         request.setUsername("username1");
         request.setMasterPassword("password101");
         passwordManagerServices.register(request);
+        assertEquals(1, passwordManagerServices.countUsers());
         SavePasswordRequest savePasswordRequest = new SavePasswordRequest();
         savePasswordRequest.setUserName("username1");
         savePasswordRequest.setWebsiteName("my website");
@@ -104,7 +106,10 @@ public class UserServiceTest{
         viewLoginDetails.setWebsiteName("myWebsite");
         viewLoginDetails.setUsername("username1");
         viewLoginDetails.setMasterPassword("password101");
-        passwordManagerServices.fetchDetails(viewLoginDetails);
+        LoginDetailsResponse viewResponse = passwordManagerServices.fetchDetails(viewLoginDetails);
+        assertEquals("myWebsite",viewResponse.getWebsiteName());
+        assertEquals("password",viewResponse.getWebsitePasssword());
+        assertEquals("websiteUsername",viewResponse.getWebsiterUsername());
     }
     @Test
     void updateWebsiteDetails_testWebsiteDetailsIsUpdated(){}
