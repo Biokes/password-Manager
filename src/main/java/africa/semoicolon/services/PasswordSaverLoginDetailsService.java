@@ -32,6 +32,9 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
     public void deleteAll(){
         loginDetailsBank.deleteAll();
     }
+    public void deleteAll(List<WebsiteDetails> listOfDetails){
+        loginDetailsBank.deleteAll(listOfDetails);
+    }
     public List<WebsiteDetails> findByUsername(String username){
         return loginDetailsBank.findByUsername(username);
     }

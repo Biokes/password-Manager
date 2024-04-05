@@ -15,6 +15,7 @@ public interface LoginDetailsService{
     void save(SavePasswordRequest savePasswordRequest);
     LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
     void deleteAll();
+    void deleteAll(List<WebsiteDetails> listOfDetails);
     List<WebsiteDetails> findByUsername(String username);
     void updateLoginDetailsPassword(UpdateDetailsRequest update);
     void deleteWebsiteDetails(DeleteWebsiteDetailsRequest deleteRequest);

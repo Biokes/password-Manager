@@ -184,7 +184,7 @@ public class UserServiceTest{
         LoginDetailsRequest loginRequest = new LoginDetailsRequest();
         loginRequest.setUsername("username1");
         loginRequest.setPassword("password1");
-        assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
+        assertThrows(InvalidDetailsException.class,()->passwordManagerServices.deleteUser(loginRequest));
         loginRequest.setPassword("password101");
         passwordManagerServices.deleteUser(loginRequest);
         assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
