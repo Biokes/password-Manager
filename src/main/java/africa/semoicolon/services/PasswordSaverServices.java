@@ -28,9 +28,9 @@ public class PasswordSaverServices implements PasswordManagerServices{
     public long countUsers(){
         return passwordSaverUserService.count();
     }
-    public long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest){
-        return 0;
-    }
+//    public long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest){
+//        return 0;
+//    }
     public long countUserLoginDetails(LoginDetailsRequest loginDetails){
         validateUserLoginDetails(loginDetails);
       return loginDetailsService.findByUsername(loginDetails.getUsername()).size();

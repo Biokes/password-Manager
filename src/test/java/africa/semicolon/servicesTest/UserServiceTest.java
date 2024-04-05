@@ -50,20 +50,6 @@ public class UserServiceTest{
         assertThrows(UsernameExistsException.class, ()->passwordManagerServices.register(request));
     }
     @Test
-    void loginToViewPassword_testUserIsLooggedIn(){
-        RegisterRequest request=new RegisterRequest( );
-        request.setFirstname("ade");
-        request.setLastname("adey");
-        request.setUsername("username1");
-        request.setMasterPassword("password101");
-        passwordManagerServices.register(request);
-        assertEquals(1, passwordManagerServices.countUsers( ));
-        PasswordDetailsRequest passwordDetailsRequest=new PasswordDetailsRequest( );
-        passwordDetailsRequest.setUsername("username1");
-        passwordDetailsRequest.setPassword("password101");
-        assertEquals(0, passwordManagerServices.countLoginDetailsOfUser(passwordDetailsRequest));
-    }
-    @Test
     void savePassword_testPasswordIsSaved(){
         RegisterRequest request=new RegisterRequest( );
         request.setFirstname("ade");
