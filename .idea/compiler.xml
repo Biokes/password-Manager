@@ -10,5 +10,8 @@
         <module name="PasswordSaver" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="security" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

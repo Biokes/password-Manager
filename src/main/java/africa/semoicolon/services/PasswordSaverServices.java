@@ -8,6 +8,8 @@ import africa.semoicolon.exceptions.UsernameExistsException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import static africa.semoicolon.utils.Validator.validateUpdateRequest;
+
 @Service
 @AllArgsConstructor
 public class PasswordSaverServices implements PasswordManagerServices{
@@ -37,6 +39,18 @@ public class PasswordSaverServices implements PasswordManagerServices{
     public void wipeAll(){
         loginDetailsService.deleteAll();
         passwordSaverUserService.deleteAll();
+    }
+    public void updateLoginDetails(UpdateDetailsRequest update){
+        validateUpdateRequest(update);
+        LoginDetailsRequest request = extractLoginDetails(update);
+        validateUserLoginDetails(request);
+        loginDetailsService.updateLoginDetailsPassword(update);
+    }
+    private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
+        LoginDetailsRequest request = new LoginDetailsRequest();
+        request.setUsername(update.getUsername());
+        request.setPassword(update.getPassword());
+        return request;
     }
     private void validateUserLoginDetails(LoginDetailsRequest request){
         for(User user : passwordSaverUserService.findAll()){

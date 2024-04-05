@@ -13,4 +13,5 @@ public interface PasswordManagerServices{
     void saveLoginDetails(SavePasswordRequest savePasswordRequest);
     LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
     void wipeAll();
+    void updateLoginDetails(UpdateDetailsRequest update);
 }
