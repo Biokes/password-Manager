@@ -1,7 +1,10 @@
 package africa.semoicolon.utils;
 
 import africa.semoicolon.data.models.User;
+import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.dtos.requests.RegisterRequest;
+import africa.semoicolon.dtos.requests.SavePasswordRequest;
+import africa.semoicolon.dtos.requests.ViewLoginDetailsRequest;
 import africa.semoicolon.exceptions.InvalidFieldException;
 
 public class Mapper{
@@ -23,5 +26,17 @@ public class Mapper{
         validate(request.getLastname());
         validate(request.getUsername());
         validate(request.getMasterPassword());
+    }
+
+    public static void mapViewLoginDetails(ViewLoginDetailsRequest viewLoginDetails){
+        WebsiteDetails details = new WebsiteDetails();
+    }
+
+    public static WebsiteDetails mapSavePasswordRequest(SavePasswordRequest savePasswordRequest){
+        WebsiteDetails websiteDetails = new WebsiteDetails();
+        websiteDetails.setWebsiteName(savePasswordRequest.getWebsiteName());
+        websiteDetails.setWebsiteUsername(savePasswordRequest.getWebsiteUsername());
+        websiteDetails.setWebsitePassword(savePasswordRequest.getWebsitePassword( ));
+        return websiteDetails;
     }
 }

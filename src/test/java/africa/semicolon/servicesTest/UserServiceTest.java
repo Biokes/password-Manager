@@ -1,18 +1,25 @@
 package africa.semicolon.servicesTest;
 
+import africa.semoicolon.Main;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidFieldException;
 import africa.semoicolon.exceptions.UsernameExistsException;
 import africa.semoicolon.services.PasswordManagerServices;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-@SpringBootTest
+@SpringBootTest(classes=Main.class)
 public class UserServiceTest{
     @Autowired
     private PasswordManagerServices passwordManagerServices;
+    @BeforeEach
+    void wipe(){
+        passwordManagerServices.wipeAll();
+    }
     @Test
     public void RegisterUser_testUserISRegistered(){
         RegisterRequest request = new RegisterRequest();
@@ -97,7 +104,7 @@ public class UserServiceTest{
         viewLoginDetails.setWebsiteName("myWebsite");
         viewLoginDetails.setUsername("username1");
         viewLoginDetails.setMasterPassword("password101");
-        passwordManagerServices.saveDetails(viewLoginDetails);
+        passwordManagerServices.fetchDetails(viewLoginDetails);
     }
     @Test
     void updateWebsiteDetails_testWebsiteDetailsIsUpdated(){}

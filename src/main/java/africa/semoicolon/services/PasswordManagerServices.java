@@ -10,5 +10,6 @@ public interface PasswordManagerServices{
     long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest);
     long countUserLoginDetails(LoginDetailsRequest loginDetails);
     void saveLoginDetails(SavePasswordRequest savePasswordRequest);
-    void saveDetails(ViewLoginDetailsRequest viewLoginDetails);
+    void fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
+    void wipeAll();
 }
