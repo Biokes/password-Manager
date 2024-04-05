@@ -5,6 +5,7 @@ import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidDetailsException;
 import africa.semoicolon.exceptions.InvalidFieldException;
+import africa.semoicolon.exceptions.UserDoesNotExistException;
 import africa.semoicolon.exceptions.UsernameExistsException;
 import africa.semoicolon.services.PasswordManagerServices;
 import org.junit.jupiter.api.BeforeEach;
@@ -182,12 +183,13 @@ public class UserServiceTest{
         passwordManagerServices.register(request);
         LoginDetailsRequest loginRequest = new LoginDetailsRequest();
         loginRequest.setUsername("username1");
+        loginRequest.setPassword("password1");
+        assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
         loginRequest.setPassword("password101");
         passwordManagerServices.deleteUser(loginRequest);
+        assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
     }
-//
-//    @Test void deleteUserWithWrongDetails_testExceptionIsThrown(){
-//    }
+
 //
 //    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
 //    }

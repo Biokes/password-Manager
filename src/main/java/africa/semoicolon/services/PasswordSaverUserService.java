@@ -24,7 +24,7 @@ public class PasswordSaverUserService implements UserService{
         userRepository.deleteAll();
     }
     public boolean userExist(String username){
-        return userRepository.findByUsername();
+        return userRepository.findByUsername(username);
     }
     public List<User> findAll(){
         return userRepository.findAll() ;

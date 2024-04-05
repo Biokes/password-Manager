@@ -4,6 +4,7 @@ import africa.semoicolon.data.models.User;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidLoginDetailsException;
+import africa.semoicolon.exceptions.UserDoesNotExistException;
 import africa.semoicolon.exceptions.UsernameExistsException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -55,10 +56,12 @@ public class PasswordSaverServices implements PasswordManagerServices{
     }
     @Override
     public void deleteUser(LoginDetailsRequest loginRequest){
-        if( passwordSaverUserService.userExist(loginRequest.getUsername( ))){
-            User user=passwordSaverUserService.findUser(loginRequest.getUsername( ));
+        if( passwordSaverUserService.userExist(loginRequest.getUsername())){
+            User user = passwordSaverUserService.findUser(loginRequest.getUsername( ));
             passwordSaverUserService.deleteUser(user);
+            return;
         }
+        throw new UserDoesNotExistException();
     }
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
         LoginDetailsRequest request = new LoginDetailsRequest();
