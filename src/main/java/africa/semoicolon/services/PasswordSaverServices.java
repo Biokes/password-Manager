@@ -53,7 +53,13 @@ public class PasswordSaverServices implements PasswordManagerServices{
         validateUserLoginDetails(loginDetails);
         loginDetailsService.deleteWebsiteDetails(deleteRequest);
     }
-
+    @Override
+    public void deleteUser(LoginDetailsRequest loginRequest){
+        if( passwordSaverUserService.userExist(loginRequest.getUsername( ))){
+            User user=passwordSaverUserService.findUser(loginRequest.getUsername( ));
+            passwordSaverUserService.deleteUser(user);
+        }
+    }
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
         LoginDetailsRequest request = new LoginDetailsRequest();
         request.setUsername(update.getUsername());

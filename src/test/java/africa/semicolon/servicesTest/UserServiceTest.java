@@ -174,6 +174,16 @@ public class UserServiceTest{
     }
 
     @Test void deleteUser_testUserIsDeleted(){
+        RegisterRequest request=new RegisterRequest( );
+        request.setFirstname("ade");
+        request.setLastname("adey");
+        request.setUsername("username1");
+        request.setMasterPassword("password101");
+        passwordManagerServices.register(request);
+        LoginDetailsRequest loginRequest = new LoginDetailsRequest();
+        loginRequest.setUsername("username1");
+        loginRequest.setPassword("password101");
+        passwordManagerServices.deleteUser(loginRequest);
     }
 //
 //    @Test void deleteUserWithWrongDetails_testExceptionIsThrown(){

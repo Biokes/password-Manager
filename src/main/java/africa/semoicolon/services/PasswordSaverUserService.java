@@ -23,15 +23,17 @@ public class PasswordSaverUserService implements UserService{
     public void deleteAll(){
         userRepository.deleteAll();
     }
-
-    @Override
     public boolean userExist(String username){
         return userRepository.findByUsername();
     }
-
-    @Override
     public List<User> findAll(){
         return userRepository.findAll() ;
+    }
+    public User findUser(String username){
+        return userRepository.findUserByUsername(username);
+    }
+    public void deleteUser(User user){
+        userRepository.delete(user);
     }
 
     private UsersRepository userRepository;

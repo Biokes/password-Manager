@@ -12,6 +12,7 @@ public interface UserService{
     long count();
     void deleteAll();
     boolean userExist(String username);
-
     List<User> findAll();
+    User findUser(String username);
+    void deleteUser(User user);
 }

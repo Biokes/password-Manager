@@ -15,4 +15,5 @@ public interface PasswordManagerServices{
     void wipeAll();
     void updateLoginDetails(UpdateDetailsRequest update);
     void deletePasswordDetails(DeleteWebsiteDetailsRequest deleteRequest);
+    void deleteUser(LoginDetailsRequest loginRequest);
 }
