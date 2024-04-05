@@ -18,12 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class UserServiceTest{
     @Autowired
     private PasswordManagerServices passwordManagerServices;
-
     @BeforeEach
     void wipe(){
         passwordManagerServices.wipeAll( );
     }
-
     @Test
     public void RegisterUser_testUserISRegistered(){
         RegisterRequest request=new RegisterRequest( );
@@ -34,7 +32,6 @@ public class UserServiceTest{
         passwordManagerServices.register(request);
         assertEquals(1, passwordManagerServices.countUsers( ));
     }
-
     @Test
     void registerWithInvalidDetails_testExceptionIsThrown(){
         RegisterRequest request=new RegisterRequest( );
@@ -44,7 +41,6 @@ public class UserServiceTest{
         request.setMasterPassword("password101");
         assertThrows(InvalidFieldException.class, ()->passwordManagerServices.register(request));
     }
-
     @Test
     void createUserWithExistingUsername_testExceptonIsThrown(){
         RegisterRequest request=new RegisterRequest( );
@@ -55,7 +51,6 @@ public class UserServiceTest{
         passwordManagerServices.register(request);
         assertThrows(UsernameExistsException.class, ()->passwordManagerServices.register(request));
     }
-
     @Test
     void loginToViewPassword_testUserIsLooggedIn(){
         RegisterRequest request=new RegisterRequest( );
@@ -169,7 +164,7 @@ public class UserServiceTest{
         DeleteWebsiteDetailsRequest deleteRequest=new DeleteWebsiteDetailsRequest( );
         deleteRequest.setUsername("username1");
         deleteRequest.setPassword("password101");
-        deleteRequest.setWebsiteName("websiteUserName");
+        deleteRequest.setWebsiteName("myWebsite");
         passwordManagerServices.deletePasswordDetails(deleteRequest);
         ViewLoginDetailsRequest viewLoginDetails=new ViewLoginDetailsRequest();
         viewLoginDetails.setWebsiteName("myWebsite");
@@ -180,14 +175,14 @@ public class UserServiceTest{
 
     @Test void deleteUser_testUserIsDeleted(){
     }
-
-    @Test void deleteUserWithWrongDetails_testExceptionIsThrown(){
-    }
-
-    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
-    }
-
-    @Test void addToWrongWebsiteDetails_testExceptionIsThrown(){
-    }
-    @Test void deleteWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){}
+//
+//    @Test void deleteUserWithWrongDetails_testExceptionIsThrown(){
+//    }
+//
+//    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
+//    }
+//
+//    @Test void addToWrongWebsiteDetails_testExceptionIsThrown(){
+//    }
+//    @Test void deleteWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){}
 }
