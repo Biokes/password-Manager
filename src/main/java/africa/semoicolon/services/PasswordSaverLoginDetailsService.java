@@ -14,10 +14,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static africa.semoicolon.utils.Validator.validateSavePasswordRequest;
+
 @Service
 @AllArgsConstructor
 public class PasswordSaverLoginDetailsService implements LoginDetailsService{
     public void save(SavePasswordRequest savePasswordRequest){
+        validateSavePasswordRequest(savePasswordRequest);
         WebsiteDetails details = Mapper.mapSavePasswordRequest(savePasswordRequest);
         loginDetailsBank.save(details);
     }
