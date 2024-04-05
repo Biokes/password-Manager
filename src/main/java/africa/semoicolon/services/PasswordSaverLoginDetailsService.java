@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static africa.semoicolon.utils.Validator.validateSavePasswordRequest;
+import static africa.semoicolon.utils.Validator.*;
 
 @Service
 @AllArgsConstructor
@@ -25,6 +25,7 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         loginDetailsBank.save(details);
     }
     public LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails){
+        validateViewLoginDetails(viewLoginDetails);
         List<WebsiteDetails> listDetails = loginDetailsBank.findByUsername(viewLoginDetails.getUsername());
         for(WebsiteDetails details : listDetails){
             if(details.getWebsiteName().equalsIgnoreCase(viewLoginDetails.getWebsiteName()))
