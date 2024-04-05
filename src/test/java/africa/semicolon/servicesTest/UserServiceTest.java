@@ -66,7 +66,6 @@ public class UserServiceTest{
         passwordDetailsRequest.setPassword("password101");
         assertEquals(0, passwordManagerServices.countLoginDetailsOfUser(passwordDetailsRequest));
     }
-
     @Test
     void savePassword_testPasswordIsSaved(){
         RegisterRequest request=new RegisterRequest( );
@@ -87,7 +86,6 @@ public class UserServiceTest{
         loginDetails.setPassword("password101");
         assertEquals(1, passwordManagerServices.countUserLoginDetails(loginDetails));
     }
-
     @Test
     void viewWebsiteDetails_testWebsiteDetailsIsGotten(){
         RegisterRequest request=new RegisterRequest( );
@@ -115,7 +113,6 @@ public class UserServiceTest{
         assertEquals("password", viewResponse.getWebsitePasssword( ));
         assertEquals("websiteUserName", viewResponse.getWebsiteUsername( ));
     }
-
     @Test
     void updateWebsiteDetails_testWebsiteDetailsIsUpdated(){
         RegisterRequest request=new RegisterRequest( );
@@ -147,7 +144,6 @@ public class UserServiceTest{
         assertEquals("password", viewResponse.getWebsitePasssword( ));
         assertEquals("websiteUserName", viewResponse.getWebsiteUsername( ));
     }
-
     @Test
     void deleteWebsiteDetails_testWebsiteDetailsIsDeleted(){
         RegisterRequest request=new RegisterRequest( );
@@ -173,7 +169,6 @@ public class UserServiceTest{
         viewLoginDetails.setMasterPassword("password101");
         assertThrows(InvalidDetailsException.class,()->passwordManagerServices.fetchDetails(viewLoginDetails));
     }
-
     @Test void deleteUser_testUserIsDeleted(){
         RegisterRequest request=new RegisterRequest( );
         request.setFirstname("ade");
@@ -189,8 +184,6 @@ public class UserServiceTest{
         passwordManagerServices.deleteUser(loginRequest);
         assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.deleteUser(loginRequest));
     }
-
-//
 //    @Test void updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){
 //    }
 //
