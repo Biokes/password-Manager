@@ -3,6 +3,7 @@ package africa.semoicolon.services;
 import africa.semoicolon.data.models.User;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
+import africa.semoicolon.exceptions.InvalidDetailsException;
 import africa.semoicolon.exceptions.InvalidLoginDetailsException;
 import africa.semoicolon.exceptions.UserDoesNotExistException;
 import africa.semoicolon.exceptions.UsernameExistsException;
@@ -58,8 +59,11 @@ public class PasswordSaverServices implements PasswordManagerServices{
     public void deleteUser(LoginDetailsRequest loginRequest){
         if( passwordSaverUserService.userExist(loginRequest.getUsername())){
             User user = passwordSaverUserService.findUser(loginRequest.getUsername( ));
-            passwordSaverUserService.deleteUser(user);
-            return;
+            if(user.getPassword().equalsIgnoreCase(loginRequest.getPassword())){
+                passwordSaverUserService.deleteUser(user);
+                return;
+            }
+            throw new InvalidDetailsException();
         }
         throw new UserDoesNotExistException();
     }
