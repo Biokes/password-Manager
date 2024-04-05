@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface LoginDetailsBank extends MongoRepository<WebsiteDetails, String>{
     List<WebsiteDetails> findByUsername(String username);
+    void deleteByWebsiteName(String websiteName);
 }

@@ -3,6 +3,7 @@ package africa.semoicolon.services;
 import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.data.repositories.LoginDetailsBank;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.requests.DeleteWebsiteDetailsRequest;
 import africa.semoicolon.dtos.requests.SavePasswordRequest;
 import africa.semoicolon.dtos.requests.UpdateDetailsRequest;
 import africa.semoicolon.dtos.requests.ViewLoginDetailsRequest;
@@ -39,7 +40,12 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         for(WebsiteDetails details : listDetails){
             if( details.getWebsiteName().equalsIgnoreCase(update.getWebsiteName()))
                 details.setWebsitePassword(update.getWebsitePassword());
+            return;
         }
+        throw new InvalidDetailsException();
+    }
+    public void deleteWebsiteDetails(DeleteWebsiteDetailsRequest deleteRequest){
+        loginDetailsBank.deleteByWebsiteName(deleteRequest.getWebsiteUsername());
     }
 
     private LoginDetailsBank loginDetailsBank;

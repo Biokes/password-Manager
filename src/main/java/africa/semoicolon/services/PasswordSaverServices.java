@@ -46,6 +46,14 @@ public class PasswordSaverServices implements PasswordManagerServices{
         validateUserLoginDetails(request);
         loginDetailsService.updateLoginDetailsPassword(update);
     }
+    public void deletePasswordDetails(DeleteWebsiteDetailsRequest deleteRequest){
+        LoginDetailsRequest loginDetails = new LoginDetailsRequest();
+        loginDetails.setUsername(deleteRequest.getUsername());
+        loginDetails.setPassword(deleteRequest.getPassword());
+        validateUserLoginDetails(loginDetails);
+        loginDetailsService.deleteWebsiteDetails(deleteRequest);
+    }
+
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
         LoginDetailsRequest request = new LoginDetailsRequest();
         request.setUsername(update.getUsername());
