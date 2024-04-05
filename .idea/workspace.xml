@@ -7,14 +7,6 @@
     <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="create and update controller">
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/SecurityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/LoginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/LoginDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/dtos/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/dtos/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/SecurityUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/UserServicesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/security/data/services/servicesTest/SecurityUserServicesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +66,38 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserServicesTest">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration name="SecurityUserServicesTest.registerUser_testUserIsRegistered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="security.data.services.servicesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="security.data.services.servicesTest" />
+      <option name="MAIN_CLASS_NAME" value="security.data.services.servicesTest.SecurityUserServicesTest" />
+      <option name="METHOD_NAME" value="registerUser_testUserIsRegistered" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semicolon.servicesTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="africa.semicolon.servicesTest" />
+      <option name="MAIN_CLASS_NAME" value="africa.semicolon.servicesTest.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServicesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security" />
       <extension name="coverage">
@@ -105,8 +128,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServicesTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="JUnit.SecurityUserServicesTest.registerUser_testUserIsRegistered" />
+        <item itemvalue="JUnit.UserServicesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712165270393</updated>
       <workItem from="1712165272186" duration="9206000" />
-      <workItem from="1712212293445" duration="1907000" />
+      <workItem from="1712212293445" duration="3234000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />

@@ -1,11 +1,17 @@
 package africa.semoicolon.services;
 
-import africa.semoicolon.dtos.RegisterRequest;
+import africa.semoicolon.data.models.User;
+import africa.semoicolon.dtos.requests.RegisterRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface UserService{
-    void register(RegisterRequest request);
+    void registerUser(RegisterRequest request);
+    long count();
+    void deleteAll();
+    boolean userExist(String username);
 
-    long countAllUsers();
+    List<User> findAll();
 }
