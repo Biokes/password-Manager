@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static africa.semoicolon.utils.Validator.validateUpdateRequest;
+import static africa.semoicolon.utils.Validator.*;
 
 @Service
 @AllArgsConstructor
@@ -36,9 +36,11 @@ public class PasswordSaverServices implements PasswordManagerServices{
       return loginDetailsService.findByUsername(loginDetails.getUsername()).size();
     }
     public void saveLoginDetails(SavePasswordRequest savePasswordRequest){
+        validateSavePasswordRequest(savePasswordRequest);
         loginDetailsService.save(savePasswordRequest);
     }
     public LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails){
+        validateViewLoginDetails(viewLoginDetails);
         return loginDetailsService.fetchDetails(viewLoginDetails);
     }
     public void wipeAll(){
@@ -52,6 +54,7 @@ public class PasswordSaverServices implements PasswordManagerServices{
         loginDetailsService.updateLoginDetailsPassword(update);
     }
     public void deletePasswordDetails(DeleteWebsiteDetailsRequest deleteRequest){
+        validateDeleteWebsiteRequest(deleteRequest);
         LoginDetailsRequest loginDetails = new LoginDetailsRequest();
         loginDetails.setUsername(deleteRequest.getUsername());
         loginDetails.setPassword(deleteRequest.getPassword());
@@ -60,6 +63,7 @@ public class PasswordSaverServices implements PasswordManagerServices{
     }
     @Override
     public void deleteUser(LoginDetailsRequest loginRequest){
+        validateLoginDetailsRequest(loginRequest);
         if( passwordSaverUserService.userExist(loginRequest.getUsername())){
             User user = passwordSaverUserService.findUser(loginRequest.getUsername( ));
             if(user.getPassword().equalsIgnoreCase(loginRequest.getPassword())){
@@ -73,12 +77,14 @@ public class PasswordSaverServices implements PasswordManagerServices{
         throw new UserDoesNotExistException();
     }
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
+        validateUpdateRequest(update);
         LoginDetailsRequest request = new LoginDetailsRequest();
         request.setUsername(update.getUsername());
         request.setPassword(update.getPassword());
         return request;
     }
     private void validateUserLoginDetails(LoginDetailsRequest request){
+        validateLoginDetailsRequest(request);
         for(User user : passwordSaverUserService.findAll()){
             if(user.getUsername().equalsIgnoreCase(request.getUsername()) &&
             user.getPassword().equalsIgnoreCase(request.getPassword()))

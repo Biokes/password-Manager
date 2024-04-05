@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 public interface PasswordManagerServices{
     void register(RegisterRequest request);
     long countUsers();
-    long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest);
     long countUserLoginDetails(LoginDetailsRequest loginDetails);
     void saveLoginDetails(SavePasswordRequest savePasswordRequest);
     LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails);
