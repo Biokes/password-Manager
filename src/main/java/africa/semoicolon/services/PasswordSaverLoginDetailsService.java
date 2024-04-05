@@ -43,6 +43,7 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         return loginDetailsBank.findByUsername(username);
     }
     public void updateLoginDetailsPassword(UpdateDetailsRequest update){
+        validateUpdateRequest(update);
        List<WebsiteDetails> listDetails =  findByUsername(update.getUsername());
         for(WebsiteDetails details : listDetails){
             if( details.getWebsiteName().equalsIgnoreCase(update.getWebsiteName()))
@@ -52,6 +53,7 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         throw new InvalidDetailsException();
     }
     public void deleteWebsiteDetails(DeleteWebsiteDetailsRequest deleteRequest){
+        validateDeleteWebsiteRequest(deleteRequest);
         List<WebsiteDetails> listDetails = loginDetailsBank.findByUsername(deleteRequest.getUsername());
         for(WebsiteDetails details : listDetails){
             if(details.getWebsiteName().equalsIgnoreCase(deleteRequest.getWebsiteName())){
@@ -62,6 +64,5 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         throw new InvalidDetailsException();
 
     }
-
     private LoginDetailsBank loginDetailsBank;
 }
