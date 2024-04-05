@@ -3,6 +3,7 @@ package africa.semicolon.servicesTest;
 import africa.semoicolon.Main;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.requests.*;
+import africa.semoicolon.exceptions.InvalidDetailsException;
 import africa.semoicolon.exceptions.InvalidFieldException;
 import africa.semoicolon.exceptions.UsernameExistsException;
 import africa.semoicolon.services.PasswordManagerServices;
@@ -168,8 +169,13 @@ public class UserServiceTest{
         DeleteWebsiteDetailsRequest deleteRequest=new DeleteWebsiteDetailsRequest( );
         deleteRequest.setUsername("username1");
         deleteRequest.setPassword("password101");
-        deleteRequest.setWebsiteUsername("websiteUserName");
+        deleteRequest.setWebsiteName("websiteUserName");
         passwordManagerServices.deletePasswordDetails(deleteRequest);
+        ViewLoginDetailsRequest viewLoginDetails=new ViewLoginDetailsRequest();
+        viewLoginDetails.setWebsiteName("myWebsite");
+        viewLoginDetails.setUsername("username1");
+        viewLoginDetails.setMasterPassword("password101");
+        assertThrows(InvalidDetailsException.class,()->passwordManagerServices.fetchDetails(viewLoginDetails));
     }
 
     @Test void deleteUser_testUserIsDeleted(){

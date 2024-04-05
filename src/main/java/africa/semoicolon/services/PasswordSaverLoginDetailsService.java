@@ -45,7 +45,7 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         throw new InvalidDetailsException();
     }
     public void deleteWebsiteDetails(DeleteWebsiteDetailsRequest deleteRequest){
-        loginDetailsBank.deleteByWebsiteName(deleteRequest.getWebsiteUsername());
+        loginDetailsBank.deleteByWebsiteName(deleteRequest.getWebsiteName());
     }
 
     private LoginDetailsBank loginDetailsBank;

@@ -6,5 +6,5 @@ import lombok.Data;
 public class DeleteWebsiteDetailsRequest{
     private String username;
     private String password;
-    private String websiteUsername;
+    private String websiteName;
 }
