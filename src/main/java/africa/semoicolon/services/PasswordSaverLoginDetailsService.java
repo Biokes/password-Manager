@@ -65,8 +65,6 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         throw new InvalidDetailsException();
 
     }
-
-    @Override
     public ViewAllResponse getAllUserDetails(String username){
         List<WebsiteDetails> details = findByUsername(username);
         if(details.isEmpty()){
