@@ -5,10 +5,7 @@ import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.*;
-import africa.semoicolon.exceptions.InvalidDetailsException;
-import africa.semoicolon.exceptions.InvalidLoginDetailsException;
-import africa.semoicolon.exceptions.UserDoesNotExistException;
-import africa.semoicolon.exceptions.UsernameExistsException;
+import africa.semoicolon.exceptions.*;
 import africa.semoicolon.utils.Validator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,6 +35,12 @@ public class PasswordSaverServices implements PasswordManagerServices{
     }
     public void saveLoginDetails(SavePasswordRequest savePasswordRequest){
         validateSavePasswordRequest(savePasswordRequest);
+        List<WebsiteDetails> details = loginDetailsService.findByUsername(savePasswordRequest.getUserName( ));
+        for(WebsiteDetails websites : details){
+            if(websites.getWebsiteName().equalsIgnoreCase(savePasswordRequest.getWebsiteName( ))){
+                throw new WebsiteAlreadyExistException();
+            }
+        }
         loginDetailsService.save(savePasswordRequest);
     }
     public LoginDetailsResponse fetchDetails(ViewLoginDetailsRequest viewLoginDetails){
