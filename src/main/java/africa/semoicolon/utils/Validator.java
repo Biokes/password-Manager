@@ -5,7 +5,7 @@ import africa.semoicolon.exceptions.InvalidFieldException;
 
 public class Validator{
     public static void validate(String userName){
-        if(userName.isBlank() || userName.isEmpty())
+        if(userName == null || userName.isBlank( ))
             throw new InvalidFieldException();
     }
     public static void validateRegisterRequest(RegisterRequest request){
