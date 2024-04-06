@@ -22,6 +22,7 @@ import static africa.semoicolon.utils.Validator.*;
 @AllArgsConstructor
 public class PasswordSaverServices implements PasswordManagerServices{
     public void register(RegisterRequest request){
+        validateRegisterRequest(request);
         for(User user : passwordSaverUserService.findAll()){
             if(user.getUsername().equalsIgnoreCase(request.getUsername( )))
                 throw new UsernameExistsException(request.getUsername() + " already exist");

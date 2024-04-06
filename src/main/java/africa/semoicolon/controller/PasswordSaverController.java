@@ -33,9 +33,9 @@ public class PasswordSaverController{
         catch(PasswordSaverException error){
             return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
         }
-        return new ResponseEntity<>("",OK);
+        return new ResponseEntity<>(loginDetails.getUsername()+" Deleted successfully",OK);
     }
-    @PatchMapping("/save-password")
+    @PutMapping("/save-password")
     public ResponseEntity<?> addPassword(@RequestBody SavePasswordRequest savePasswordRequest){
         try{
             userService.saveLoginDetails(savePasswordRequest);
@@ -45,13 +45,13 @@ public class PasswordSaverController{
         }
     }
     @PatchMapping("/update-website-password")
-    public ResponseEntity<?> updateWebsitePasssword(@RequestBody UpdateDetailsRequest updateDetailsRequest){
+    public ResponseEntity<?> updateWebsitePassword(@RequestBody UpdateDetailsRequest updateDetailsRequest){
         try{
             userService.updateLoginDetails(updateDetailsRequest);
         }catch( PasswordSaverException error ){
             return new ResponseEntity<>(error.getMessage( ), BAD_REQUEST);
         }
-        return new ResponseEntity<>("Updated succefully", OK);
+        return new ResponseEntity<>("Updated successfully", OK);
     }
     @GetMapping("/view-password-saved")
     public ResponseEntity<?> viewPasswordDetails(@RequestBody ViewLoginDetailsRequest viewLoginDetailsRequest){
