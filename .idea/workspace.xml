@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="create and update controller">
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordManagerServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordManagerServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverLoginDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverLoginDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverServices.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Mapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Validator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/africa/semicolon/servicesTest/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/africa/semicolon/servicesTest/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,24 +79,9 @@
       <recent name="C:\Users\DELL\IdeaProjects\passwordManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown">
+  <component name="RunManager" selected="Spring Boot.Main">
     <configuration name="UserServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PasswordSaver" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="africa.semicolon.servicesTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="africa.semicolon.servicesTest" />
-      <option name="MAIN_CLASS_NAME" value="africa.semicolon.servicesTest.UserServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="security" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="africa.semicolon.servicesTest.*" />
@@ -151,13 +143,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="PasswordSaver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="africa.semoicolon.Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="africa.semoicolon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" />
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.UserServiceTest (1)" />
+        <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" />
         <item itemvalue="JUnit.UserServiceTest.deleteUser_testUserIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest.deleteWebsiteDetails_testWebsiteDetailsIsDeleted" />
-        <item itemvalue="JUnit.UserServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +178,7 @@
       <workItem from="1712212293445" duration="3234000" />
       <workItem from="1712304521116" duration="517000" />
       <workItem from="1712314050689" duration="2806000" />
-      <workItem from="1712321840393" duration="9602000" />
+      <workItem from="1712321840393" duration="12649000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />
