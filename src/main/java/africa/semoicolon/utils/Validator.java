@@ -7,6 +7,7 @@ public class Validator{
     public static void validate(String userName){
         if(userName == null || userName.isBlank( ))
             throw new InvalidFieldException();
+        userName = userName.strip();
     }
     public static void validateRegisterRequest(RegisterRequest request){
         validate(request.getFirstname());
