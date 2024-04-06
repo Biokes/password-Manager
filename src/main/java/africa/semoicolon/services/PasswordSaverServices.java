@@ -80,7 +80,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
         }
         throw new UserDoesNotExistException();
     }
-
     @Override
     public ViewAllResponse viewAllDetails(ViewAllRequest request){
         Validator.validateRequest(request);
@@ -89,7 +88,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
             return loginDetailsService.getAllUserDetails(request.getUsername());
         throw new InvalidDetailsException();
     }
-
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
         validateUpdateRequest(update);
         LoginDetailsRequest request = new LoginDetailsRequest();
@@ -106,7 +104,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
         }
         throw new InvalidLoginDetailsException();
     }
-
     private PasswordSaverUserService passwordSaverUserService;
     private LoginDetailsService loginDetailsService;
 }

@@ -21,7 +21,7 @@ public class UserServiceTest{
         passwordManagerServices.wipeAll( );
     }
     @Test
-    public void RegisterUser_testUserISRegistered(){
+    public void RegisterUser_testUserIsRegistered(){
         RegisterRequest request=new RegisterRequest( );
         request.setFirstname("ade");
         request.setLastname("adey");
