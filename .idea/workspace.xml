@@ -8,13 +8,12 @@
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordManagerServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordManagerServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverLoginDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverLoginDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/services/PasswordSaverServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Mapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/utils/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/africa/semicolon/servicesTest/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/africa/semicolon/servicesTest/UserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/LoginDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/LoginDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordManagerServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverLoginDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverLoginDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/utils/Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/utils/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,7 @@
       <workItem from="1712212293445" duration="3234000" />
       <workItem from="1712304521116" duration="517000" />
       <workItem from="1712314050689" duration="2806000" />
-      <workItem from="1712321840393" duration="12649000" />
+      <workItem from="1712321840393" duration="17197000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />

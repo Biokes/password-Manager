@@ -2,6 +2,7 @@ package africa.semoicolon.services;
 
 import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.DeleteWebsiteDetailsRequest;
 import africa.semoicolon.dtos.requests.SavePasswordRequest;
 import africa.semoicolon.dtos.requests.UpdateDetailsRequest;
@@ -19,4 +20,5 @@ public interface LoginDetailsService{
     List<WebsiteDetails> findByUsername(String username);
     void updateLoginDetailsPassword(UpdateDetailsRequest update);
     void deleteWebsiteDetails(DeleteWebsiteDetailsRequest deleteRequest);
+    ViewAllResponse getAllUserDetails(String username);
 }

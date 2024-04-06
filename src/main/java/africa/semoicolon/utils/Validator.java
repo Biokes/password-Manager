@@ -44,5 +44,10 @@ public class Validator{
         validate(request.getWebsiteUsername());
         validate(request.getWebsitePassword());
     }
+
+    public static void validateRequest(ViewAllRequest request){
+        validate(request.getUsername());
+        validate(request.getPassword());
+    }
 }
 

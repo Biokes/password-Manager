@@ -3,15 +3,18 @@ package africa.semoicolon.services;
 import africa.semoicolon.data.models.User;
 import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.InvalidDetailsException;
 import africa.semoicolon.exceptions.InvalidLoginDetailsException;
 import africa.semoicolon.exceptions.UserDoesNotExistException;
 import africa.semoicolon.exceptions.UsernameExistsException;
+import africa.semoicolon.utils.Validator;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import static africa.semoicolon.utils.Validator.*;
 
@@ -28,9 +31,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
     public long countUsers(){
         return passwordSaverUserService.count();
     }
-//    public long countLoginDetailsOfUser(PasswordDetailsRequest passwordDetailsRequest){
-//        return 0;
-//    }
     public long countUserLoginDetails(LoginDetailsRequest loginDetails){
         validateUserLoginDetails(loginDetails);
       return loginDetailsService.findByUsername(loginDetails.getUsername()).size();
@@ -76,6 +76,16 @@ public class PasswordSaverServices implements PasswordManagerServices{
         }
         throw new UserDoesNotExistException();
     }
+
+    @Override
+    public ViewAllResponse viewAllDetails(ViewAllRequest request){
+        Validator.validateRequest(request);
+        Optional<User> userGotten =Optional.ofNullable(passwordSaverUserService.findUser(request.getUsername( )));
+        if( userGotten.isPresent() && userGotten.get().getPassword().equalsIgnoreCase(request.getPassword()))
+            return loginDetailsService.getAllUserDetails(request.getUsername());
+        throw new InvalidDetailsException();
+    }
+
     private LoginDetailsRequest extractLoginDetails(UpdateDetailsRequest update){
         validateUpdateRequest(update);
         LoginDetailsRequest request = new LoginDetailsRequest();

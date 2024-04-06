@@ -3,6 +3,7 @@ package africa.semoicolon.services;
 import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.data.repositories.LoginDetailsBank;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.DeleteWebsiteDetailsRequest;
 import africa.semoicolon.dtos.requests.SavePasswordRequest;
 import africa.semoicolon.dtos.requests.UpdateDetailsRequest;
@@ -64,5 +65,17 @@ public class PasswordSaverLoginDetailsService implements LoginDetailsService{
         throw new InvalidDetailsException();
 
     }
+
+    @Override
+    public ViewAllResponse getAllUserDetails(String username){
+        List<WebsiteDetails> details = findByUsername(username);
+        if(details.isEmpty()){
+            ViewAllResponse response  = new ViewAllResponse();
+            response.setBody("No records saved yet");
+            return response;
+        }
+        return Mapper.mapDetails(details);
+    }
+
     private LoginDetailsBank loginDetailsBank;
 }

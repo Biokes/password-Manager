@@ -1,6 +1,7 @@
 package africa.semoicolon.controller;
 
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.*;
 import africa.semoicolon.exceptions.PasswordSaverException;
 import africa.semoicolon.services.PasswordManagerServices;
@@ -75,8 +76,8 @@ public class PasswordSaverController{
     @GetMapping("/view-all-passwords")
     public ResponseEntity<?> viewAllPassword(@RequestBody ViewAllRequest viewAllRequest){
         try{
-            ViewAllResonse response = userService.viewAllDetails();
-            return new ResponseEntity<>()
+            ViewAllResponse response = userService.viewAllDetails(viewAllRequest);
+            return new ResponseEntity<>(response.getBody(),OK);
         }
         catch(PasswordSaverException error){
             return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);

@@ -3,10 +3,14 @@ package africa.semoicolon.utils;
 import africa.semoicolon.data.models.User;
 import africa.semoicolon.data.models.WebsiteDetails;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.RegisterRequest;
 import africa.semoicolon.dtos.requests.SavePasswordRequest;
+import africa.semoicolon.dtos.requests.ViewAllRequest;
 import africa.semoicolon.dtos.requests.ViewLoginDetailsRequest;
 import africa.semoicolon.exceptions.InvalidFieldException;
+
+import java.util.List;
 
 import static africa.semoicolon.utils.Validator.validateRegisterRequest;
 
@@ -38,6 +42,19 @@ public class Mapper{
         response.setWebsiteName(details.getWebsiteName());
         response.setWebsiteUsername(details.getWebsiteUsername());
         response.setWebsitePasssword(details.getWebsitePassword());
+        return response;
+    }
+
+    public static ViewAllResponse mapDetails(List<WebsiteDetails> details){
+        StringBuilder pack = new StringBuilder();
+        ViewAllResponse response = new ViewAllResponse();
+        for(WebsiteDetails details1 : details){
+            pack.append(String.format("%s : %s\n%s : %s\n%s : %s\n",
+                    "Website Name",details1.getWebsiteName(),
+                    "Website Username",details1.getWebsiteUsername(),
+                    "Website Password", details1.getWebsitePassword()));
+        }
+        response.setBody(pack.toString());
         return response;
     }
 }

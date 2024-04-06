@@ -1,6 +1,7 @@
 package africa.semoicolon.services;
 
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
+import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.*;
 import org.springframework.stereotype.Service;
 @Service
@@ -14,4 +15,5 @@ public interface PasswordManagerServices{
     void updateLoginDetails(UpdateDetailsRequest update);
     void deletePasswordDetails(DeleteWebsiteDetailsRequest deleteRequest);
     void deleteUser(LoginDetailsRequest loginRequest);
+    ViewAllResponse viewAllDetails(ViewAllRequest request);
 }
