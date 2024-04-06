@@ -194,8 +194,4 @@ public class UserServiceTest{
         update.setWebsitePassword("password101-");
         passwordManagerServices.updateLoginDetails(update);
     }
-//
-//    @Test void addToWrongWebsiteDetails_testExceptionIsThrown(){
-//    }
-//    @Test void deleteWebsiteDetailsWithWrongDetails_testExceptionIsThrown(){}
 }

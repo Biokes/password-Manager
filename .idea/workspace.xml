@@ -78,7 +78,7 @@
       <recent name="C:\Users\DELL\IdeaProjects\passwordManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.UserServiceTest (1)">
     <configuration name="UserServiceTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PasswordSaver" />
       <extension name="coverage">
@@ -157,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.UserServiceTest (1)" />
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="JUnit.UserServiceTest.updateWebsiteDetailsWithWrongDetails_testExceptionIsThrown" />
         <item itemvalue="JUnit.UserServiceTest.deleteUser_testUserIsDeleted" />
         <item itemvalue="JUnit.UserServiceTest.deleteWebsiteDetails_testWebsiteDetailsIsDeleted" />
