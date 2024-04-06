@@ -73,8 +73,11 @@ public class PasswordSaverController{
         }
     }
     @GetMapping("/view-all-passwords")
-    public ResponseEntity<?> viewAllPassword(){
-        try{}
+    public ResponseEntity<?> viewAllPassword(@RequestBody ViewAllRequest viewAllRequest){
+        try{
+            ViewAllResonse response = userService.viewAllDetails();
+            return new ResponseEntity<>()
+        }
         catch(PasswordSaverException error){
             return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
         }
