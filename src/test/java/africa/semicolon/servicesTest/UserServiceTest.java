@@ -14,8 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest(classes=Main.class)
 public class UserServiceTest{
-    @Autowired
-    private PasswordManagerServices passwordManagerServices;
     @BeforeEach
     void wipe(){
         passwordManagerServices.wipeAll( );
@@ -185,13 +183,18 @@ public class UserServiceTest{
         update.setPassword("password101");
         update.setWebsiteName("nothing");
         update.setWebsitePassword("password101-");
-        assertThrows(InvalidLoginDetailsException.class,()->passwordManagerServices.updateLoginDetails(update));
+        assertThrows(InvalidLoginDetailsException.class,
+                ()->passwordManagerServices.updateLoginDetails(update));
         update.setWebsitePassword("password");
-        assertThrows(InvalidLoginDetailsException.class,()->passwordManagerServices.updateLoginDetails(update));
+        assertThrows(InvalidLoginDetailsException.class,
+                ()->passwordManagerServices.updateLoginDetails(update));
         update.setUsername("username1");
         update.setPassword("password101");
         update.setWebsiteName("myWebsite");
         update.setWebsitePassword("password101-");
         passwordManagerServices.updateLoginDetails(update);
     }
+
+    @Autowired
+    private PasswordManagerServices passwordManagerServices;
 }
