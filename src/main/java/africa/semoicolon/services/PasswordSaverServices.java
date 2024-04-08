@@ -35,6 +35,7 @@ public class PasswordSaverServices implements PasswordManagerServices{
     }
     public void saveLoginDetails(SavePasswordRequest savePasswordRequest){
         validateSavePasswordRequest(savePasswordRequest);
+        validateUserExistence(savePasswordRequest.getUserName());
         List<WebsiteDetails> details = loginDetailsService.findByUsername(savePasswordRequest.getUserName( ));
         for(WebsiteDetails websites : details){
             if(websites.getWebsiteName().equalsIgnoreCase(savePasswordRequest.getWebsiteName( ))){
@@ -65,7 +66,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
         validateUserLoginDetails(loginDetails);
         loginDetailsService.deleteWebsiteDetails(deleteRequest);
     }
-    @Override
     public void deleteUser(LoginDetailsRequest loginRequest){
         validateLoginDetailsRequest(loginRequest);
         if( passwordSaverUserService.userExist(loginRequest.getUsername())){
@@ -80,7 +80,6 @@ public class PasswordSaverServices implements PasswordManagerServices{
         }
         throw new UserDoesNotExistException();
     }
-    @Override
     public ViewAllResponse viewAllDetails(ViewAllRequest request){
         Validator.validateRequest(request);
         Optional<User> userGotten =Optional.ofNullable(passwordSaverUserService.findUser(request.getUsername( )));
@@ -94,6 +93,11 @@ public class PasswordSaverServices implements PasswordManagerServices{
         request.setUsername(update.getUsername());
         request.setPassword(update.getPassword());
         return request;
+    }
+    private void validateUserExistence(String userName){
+        Optional<User> user =Optional.ofNullable(passwordSaverUserService.findUser(userName));
+        if(user.isEmpty())
+            throw new UserDoesNotExistException();
     }
     private void validateUserLoginDetails(LoginDetailsRequest request){
         validateLoginDetailsRequest(request);

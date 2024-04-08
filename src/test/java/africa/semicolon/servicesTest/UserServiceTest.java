@@ -194,7 +194,14 @@ public class UserServiceTest{
         update.setWebsitePassword("password101-");
         passwordManagerServices.updateLoginDetails(update);
     }
-
+    @Test void savePasswordWithUsernameThatDoesNotExist_testExceptionIsThrown(){
+        SavePasswordRequest savePasswordRequest=new SavePasswordRequest( );
+        savePasswordRequest.setUserName("username1");
+        savePasswordRequest.setWebsiteName("my website");
+        savePasswordRequest.setWebsiteUsername("username1");
+        savePasswordRequest.setWebsitePassword("password");
+        assertThrows(UserDoesNotExistException.class,()->passwordManagerServices.saveLoginDetails(savePasswordRequest));
+    }
     @Autowired
     private PasswordManagerServices passwordManagerServices;
 }
