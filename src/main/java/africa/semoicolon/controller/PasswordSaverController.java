@@ -14,11 +14,11 @@ import static org.springframework.http.HttpStatus.*;
 @AllArgsConstructor
 @RequestMapping("/password-saver")
 public class PasswordSaverController{
-    private PasswordManagerServices managerServices;
+    private PasswordManagerServices passwordManagerServices;
     @PostMapping("/Register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request){
         try{
-          managerServices.register(request);
+          passwordManagerServices.register(request);
             return new ResponseEntity<>("User Registered successfully", CREATED);
         }
         catch(PasswordSaverException exceptions){
@@ -28,7 +28,7 @@ public class PasswordSaverController{
     @DeleteMapping("/Delete-Account")
     public ResponseEntity<?> deleteAccount(@RequestBody LoginDetailsRequest loginDetails){
         try{
-            managerServices.deleteUser(loginDetails);
+            passwordManagerServices.deleteUser(loginDetails);
         }
         catch(PasswordSaverException error){
             return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
@@ -38,7 +38,7 @@ public class PasswordSaverController{
     @PutMapping("/save-password")
     public ResponseEntity<?> addPassword(@RequestBody SavePasswordRequest savePasswordRequest){
         try{
-            managerServices.saveLoginDetails(savePasswordRequest);
+            passwordManagerServices.saveLoginDetails(savePasswordRequest);
             return new ResponseEntity<>("Saved successfully", OK);
         }catch(PasswordSaverException error){
             return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
@@ -47,7 +47,7 @@ public class PasswordSaverController{
     @PatchMapping("/update-website-password")
     public ResponseEntity<?> updateWebsitePassword(@RequestBody UpdateDetailsRequest updateDetailsRequest){
         try{
-            managerServices.updateLoginDetails(updateDetailsRequest);
+            passwordManagerServices.updateLoginDetails(updateDetailsRequest);
         }catch( PasswordSaverException error ){
             return new ResponseEntity<>(error.getMessage( ), BAD_REQUEST);
         }
@@ -56,7 +56,7 @@ public class PasswordSaverController{
     @GetMapping("/view-password-saved")
     public ResponseEntity<?> viewPasswordDetails(@RequestBody ViewLoginDetailsRequest viewLoginDetailsRequest){
         try{
-            LoginDetailsResponse response=managerServices.fetchDetails(viewLoginDetailsRequest);
+            LoginDetailsResponse response=passwordManagerServices.fetchDetails(viewLoginDetailsRequest);
             return new ResponseEntity<>(String.format("%s : %s\n%s : %s\n%s : %s","Website name",response.getWebsiteName( ),
                     "Website Username",response.getWebsiteUsername( ), "Website Password",response.getWebsitePasssword( )), OK);
         }catch(PasswordSaverException error){
@@ -66,7 +66,7 @@ public class PasswordSaverController{
     @DeleteMapping("/delete-password-saved")
     public ResponseEntity<?> deletePasswordDetails(@RequestBody DeleteWebsiteDetailsRequest detailsRequest){
         try{
-        managerServices.deletePasswordDetails(detailsRequest);
+        passwordManagerServices.deletePasswordDetails(detailsRequest);
         return new ResponseEntity<>("deleted successfully", OK);
         }
         catch(PasswordSaverException error){
@@ -76,7 +76,7 @@ public class PasswordSaverController{
     @GetMapping("/view-all-passwords")
     public ResponseEntity<?> viewAllPassword(@RequestBody ViewAllRequest viewAllRequest){
         try{
-            ViewAllResponse response = managerServices.viewAllDetails(viewAllRequest);
+            ViewAllResponse response = passwordManagerServices.viewAllDetails(viewAllRequest);
             return new ResponseEntity<>(response.getBody(),OK);
         }
         catch(PasswordSaverException error){
