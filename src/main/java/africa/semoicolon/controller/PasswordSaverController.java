@@ -79,10 +79,10 @@ public class PasswordSaverController{
     public ResponseEntity<?> viewAllPassword(@RequestBody ViewAllRequest viewAllRequest){
         try{
             ViewAllResponse response = passwordManagerServices.viewAllDetails(viewAllRequest);
-            return new ResponseEntity<>(response.getBody(),OK);
+            return new ResponseEntity<>(new ApiResponse(true,response.getBody()),OK);
         }
         catch(PasswordSaverException error){
-            return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
     }
 }

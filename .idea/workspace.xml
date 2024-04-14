@@ -44,6 +44,7 @@
       <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/java/africa/semoicolon/service/WebsiteDetailsTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/controller/PasswordSaverController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +217,7 @@
       <workItem from="1712507851944" duration="9845000" />
       <workItem from="1712586197271" duration="2583000" />
       <workItem from="1713105440072" duration="4623000" />
-      <workItem from="1713134637073" duration="450000" />
+      <workItem from="1713134637073" duration="1358000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />
