@@ -1,5 +1,6 @@
 package africa.semoicolon.controller;
 
+import africa.semoicolon.dtos.reponses.ApiResponse;
 import africa.semoicolon.dtos.reponses.LoginDetailsResponse;
 import africa.semoicolon.dtos.reponses.ViewAllResponse;
 import africa.semoicolon.dtos.requests.*;
@@ -19,10 +20,10 @@ public class PasswordSaverController{
     public ResponseEntity<?> register(@RequestBody RegisterRequest request){
         try{
           passwordManagerServices.register(request);
-            return new ResponseEntity<>("User Registered successfully", CREATED);
+            return new ResponseEntity<>(new ApiResponse(true, "User Registered successfully"), CREATED);
         }
         catch(PasswordSaverException exceptions){
-            return new ResponseEntity<>(exceptions.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,exceptions.getMessage()), BAD_REQUEST);
         }
     }
     @DeleteMapping("/Delete-Account")
@@ -31,17 +32,18 @@ public class PasswordSaverController{
             passwordManagerServices.deleteUser(loginDetails);
         }
         catch(PasswordSaverException error){
-            return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
-        return new ResponseEntity<>(loginDetails.getUsername()+" Deleted successfully",OK);
+        return new ResponseEntity<>(new ApiResponse(true, loginDetails.getUsername()+
+                                                                  " Deleted successfully"),OK);
     }
     @PutMapping("/save-password")
     public ResponseEntity<?> addPassword(@RequestBody SavePasswordRequest savePasswordRequest){
         try{
             passwordManagerServices.saveLoginDetails(savePasswordRequest);
-            return new ResponseEntity<>("Saved successfully", OK);
+            return new ResponseEntity<>(new ApiResponse(true,"Saved successfully"), OK);
         }catch(PasswordSaverException error){
-            return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
     }
     @PatchMapping("/update-website-password")
@@ -49,28 +51,28 @@ public class PasswordSaverController{
         try{
             passwordManagerServices.updateLoginDetails(updateDetailsRequest);
         }catch( PasswordSaverException error ){
-            return new ResponseEntity<>(error.getMessage( ), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
-        return new ResponseEntity<>("Updated successfully", OK);
+        return new ResponseEntity<>(new ApiResponse(true,"Updated successfully"), OK);
     }
     @GetMapping("/view-password-saved")
     public ResponseEntity<?> viewPasswordDetails(@RequestBody ViewLoginDetailsRequest viewLoginDetailsRequest){
         try{
             LoginDetailsResponse response=passwordManagerServices.fetchDetails(viewLoginDetailsRequest);
-            return new ResponseEntity<>(String.format("%s : %s\n%s : %s\n%s : %s","Website name",response.getWebsiteName( ),
-                    "Website Username",response.getWebsiteUsername( ), "Website Password",response.getWebsitePasssword( )), OK);
+            return new ResponseEntity<>(new ApiResponse(true,String.format("%s : %s\n%s : %s\n%s : %s","Website name",response.getWebsiteName( ),
+                    "Website Username",response.getWebsiteUsername( ), "Website Password",response.getWebsitePasssword( ))), OK);
         }catch(PasswordSaverException error){
-            return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
     }
     @DeleteMapping("/delete-password-saved")
     public ResponseEntity<?> deletePasswordDetails(@RequestBody DeleteWebsiteDetailsRequest detailsRequest){
         try{
         passwordManagerServices.deletePasswordDetails(detailsRequest);
-        return new ResponseEntity<>("deleted successfully", OK);
+        return new ResponseEntity<>(new ApiResponse(true,"deleted successfully"), OK);
         }
         catch(PasswordSaverException error){
-            return new ResponseEntity<>(error.getMessage(), BAD_REQUEST);
+            return new ResponseEntity<>(new ApiResponse(false,error.getMessage()), BAD_REQUEST);
         }
     }
     @GetMapping("/view-all-passwords")
