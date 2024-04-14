@@ -5,12 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bde149e-e8f1-4d17-9fc3-a330e1a11db9" name="Changes" comment="create and update controller">
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/DeleteUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/IncorrectPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/InvalidFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/PasswordBankExceptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/SiteNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/UserAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Exception/UserNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/data/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/data/model/WebsiteDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/data/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/data/repo/WebsiteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/request/CreateUserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/request/CreateWebDetailsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/request/DeleteWebDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/request/UpdatePasswordRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/request/ViewAllRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/dto/response/ViewAllResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/service/implementations/PasswordManagerDetailsSevice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/service/implementations/PasswordUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/service/interFace/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/service/interFace/WebsiteDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/utils/Encryption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/utils/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/main/java/africa/semoicolon/utils/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/java/africa/semoicolon/repo/UserRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/java/africa/semoicolon/repo/WebsiteRepoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/java/africa/semoicolon/service/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/java/africa/semoicolon/service/WebsiteDetailsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Password-bank/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../chapter3" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/services/PasswordSaverServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/models/WebsiteDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/africa/semoicolon/data/models/WebsiteDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/africa/semicolon/servicesTest/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/africa/semicolon/servicesTest/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/controller/PasswordSaverController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/africa/semoicolon/data/models/WebsiteDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/africa/semoicolon/data/models/WebsiteDetails.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +220,9 @@
       <workItem from="1712321840393" duration="22041000" />
       <workItem from="1712401597566" duration="7551000" />
       <workItem from="1712478525376" duration="600000" />
-      <workItem from="1712507851944" duration="4503000" />
+      <workItem from="1712507851944" duration="9845000" />
+      <workItem from="1712586197271" duration="2583000" />
+      <workItem from="1713105440072" duration="4623000" />
     </task>
     <task id="LOCAL-00001" summary="repo  creation">
       <option name="closed" value="true" />

@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest(classes=Main.class)
 public class UserServiceTest{
     @BeforeEach
-    void wipe(){
+    public void wipe(){
         passwordManagerServices.wipeAll( );
     }
     @Test
